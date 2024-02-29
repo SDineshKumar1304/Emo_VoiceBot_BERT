@@ -1,0 +1,42 @@
+Datetime,Recognized Text,Emotion Label,Emotion Score
+21:05.8,I don't like apples,disapproval,0.987375975
+21:31.7,i hate bts,anger,0.98561734
+24:05.0,i love vaara irudhi,love,0.993433714
+25:17.7,I like oranges,love,0.903345466
+00:15.0,I love playing football,love,0.954909623
+14:50.7,I love Samsung,love,0.990128815
+22:04.8,I like this green shirt,love,0.838920951
+24:59.3,behad Hai katha,neutral,0.781793594
+25:27.8,I like this Mouse,love,0.943510056
+27:03.1,I can't believe it's over between us,surprise,0.993521988
+28:06.0,My heart is shattered since the breakup,sadness,0.835402846
+29:57.3,This breakup has left me utterly heartbroken,sadness,0.925637662
+31:31.5,I'm devastated by the loss of our relationship,sadness,0.540369868
+32:15.1,I can't contain my joy after achieving my lifelong dream,joy,0.992101014
+11:36.7,vijay is very good actor,admiration,0.99097836
+12:05.8,you are a bad dog ,anger,0.805031538
+22:38.6,i never liked taylor shift songs,disapproval,0.622331142
+36:00.1,i hate waking up early,anger,0.970442295
+37:49.8,I like bike,love,0.872965038
+38:26.7,what do you want,neutral,0.687624335
+54:10.6,I like this kind of Black Sheep,love,0.777512014
+54:35.7,i like red bicycles,love,0.892866552
+12-09-2023 14:14,I like race bikes,love,0.831713617
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+2023-12-13 19:33:06,i need icecream,desire,0.5136617422103882
+2023-12-13 20:34:42,AI is going to make lose our jobs,sadness,0.8725160956382751
+2024-02-04 19:00:13,fuck you bitch,anger,0.9857901334762573
+2024-02-05 17:28:19,I am happy,joy,0.9708252549171448
+2024-02-05 17:28:39,today exam is very tough,fear,0.7788093090057373
+2024-02-05 17:29:00,i failed in my life,sadness,0.8699460625648499
+2024-02-05 20:16:38,fuck you bitch,anger,0.9857901334762573
