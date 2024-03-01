@@ -1,5 +1,7 @@
+# Bert LLM from Transformers Library
+
 ## PROJECT 
- ##  AI Multi-Modal Emotion Analysis VoiceBot for Personalized and Inclusive Conversations using BERT LLM model
+ ##  AI Multi-Modal Emotion Analysis VoiceBot for both Text and Audio Input for Personalized and Inclusive Conversations using BERT LLM model
 
 This project introduces an VoiceBot skill aimed at providing psychological advice. Explore how technology can contribute to mental well-being and consider contributing to make it even more impactful.
 
