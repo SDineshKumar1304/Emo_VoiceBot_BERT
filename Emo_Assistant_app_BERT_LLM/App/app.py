@@ -9,18 +9,12 @@ import re
 import numpy as np
 from datetime import datetime
 
-# Initialize Speech Recognition and Text-to-Speech
 r = sr.Recognizer()
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
-
-# Emotion Analysis Pipeline
 emotion = pipeline('sentiment-analysis', model='arpanghoshal/EmoRoBERTa')
 
-# CSV File Handling
-fieldnames = ['Datetime', 'Recognized Text', 'Emotion Label', 'Emotion Score']
-csv_file_path = "emotion_data.csv"
 
 st.set_page_config(
     page_title="Emotion Analysis",
@@ -29,11 +23,7 @@ st.set_page_config(
 )
 
 
-
-
 st.title("Emotion Analysis Voicebot  💕")
-
-
 
 
 def chatbot_response(sentiment):
@@ -164,7 +154,7 @@ def chatbot_response(sentiment):
             "Plan a small outing to break the routine.",
             "Take a moment to reflect on your day and find the positives."
         ]
-        return f"Oh I see. Your feelings are quite balanced. Here are some suggestions:\n{np.random.choice(neutral_suggestions)}"
+        return f"{np.random.choice(neutral_suggestions)}"
 
 def speak(text):
     try:
@@ -172,7 +162,6 @@ def speak(text):
         engine.runAndWait()
     except RuntimeError as e:
         st.warning(f"Warning: {e}")
-
 
 
 
@@ -185,12 +174,6 @@ def wishme():
     else:
         speak("Good evening , My name is VoiceBot DDN , How Can I Help You")
 
-def speak(text):
-    try:
-        engine.say(text)
-        engine.runAndWait()
-    except RuntimeError as e:
-        st.warning(f"Warning: {e}")
 
 def takeCommand():
     st.write("Speak now...")
@@ -207,29 +190,36 @@ def takeCommand():
         st.write(f"Could not request results from speech recognition service; {e}")
         return None
 
+def process_input(user_input):
+    emotion_labels = emotion(user_input)
+    detected_emotion = emotion_labels[0]['label']
+    emotion_score = emotion_labels[0]['score']
+    current_datetime = datetime.now()
+    st.write("Detected Emotion:", detected_emotion)
+    st.write("Emotion Score:", emotion_score)
+    st.write("Datetime:", current_datetime)
+    advice = chatbot_response(detected_emotion)
+    st.write(advice)
+    speak(advice)
+
+
 def searchWikipedia(query):
     try:
-        # Get the full Wikipedia page content for the query
         page = wikipedia.page(query)
-        
-        # Extract and display all sentences from the page
         sentences = page.content.split('. ')
-        
+
         st.write("According to my Knowledge:")
-        for sentence in sentences:
+        for i, sentence in enumerate(sentences[:6]):
             st.write(sentence)
-        
-        # Speak the result using text-to-speech
+
         speak("According to my Knowledge")
-        speak('. '.join(sentences))
-        
+        speak('. '.join(sentences[:6]))
+
     except wikipedia.exceptions.DisambiguationError as e:
-        # Handle DisambiguationError, which occurs when there are multiple possible results
         st.warning("There are multiple possible results. Please specify your query.")
         speak("There are multiple possible results. Please specify your query.")
-        
+
     except wikipedia.exceptions.PageError as e:
-        # Handle PageError, which occurs when no information is found for the given query
         st.warning("I couldn't find any information about that.")
         speak("I couldn't find any information about that.")
 
@@ -282,28 +272,40 @@ def analyze_emotion_from_speech():
                 advice = chatbot_response(detected_emotion)
                 st.write(advice)
                 speak(advice)
+def main():
+    wishme()
+    st.sidebar.header("User Input")
+    input_type = st.sidebar.radio("Select input type:", ["Voice", "Text"])
+
+    if input_type == "Voice":
+        while True:
+            command = takeCommand()
+            if command is not None:
+                if "exit" in command:
+                    st.write("Goodbye!")
+                    break
+                elif "about" in command:
+                    query = re.search('about (.+)', command).group(1)
+                    searchWikipedia(query)
+                elif "open website" in command:
+                    url = re.search('open website (.+)', command).group(1)
+                    openWebsite(url)
+                elif "time" in command:
+                    current_time = time.strftime("%I:%M %p")
+                    st.write(f"The current time is {current_time}.")
+                    speak(f"The current time is {current_time}.")
+                elif "emotion" in command:
+                    analyze_emotion_from_speech()
+                else:
+                    process_input(command)
+
+    elif input_type == "Text":
+        st.sidebar.header("Text Input")
+        user_input = st.sidebar.text_input("Type your command:")
+
+        if st.sidebar.button("Process Text Input"):
+            process_input(user_input)
 
 
 if __name__ == "__main__":
-    wishme()
-    while True:
-        command = takeCommand()
-        if command is not None:
-            if "exit" in command:
-                st.write("Goodbye!")
-                break
-            elif "about" in command:
-                query = re.search('about (.+)', command).group(1)
-                searchWikipedia(query)
-                
-            elif "open website" in command:
-                url = re.search('open website (.+)', command).group(1)
-                openWebsite(url)
-            elif "time" in command:
-                current_time = time.strftime("%I:%M %p")
-                st.write(f"The current time is {current_time}.")
-                speak(f"The current time is {current_time}.")
-            elif "emotion" in command:
-                analyze_emotion_from_speech()
-            else:
-                st.write("I'm sorry, I don't know how to do that.")
+    main()
