@@ -1,4 +1,4 @@
-# Training Bert Model 
+![image](https://github.com/SDineshKumar1304/Emo_VoiceBot_LLM_BERT/assets/125432987/56db2655-4b96-4251-86fb-c609ac409880)# Training Bert Model 
 # BERT Introduction:
 BERT, or Bidirectional Encoder Representations from Transformers, is a large language model (LLM) that was developed by Google AI. It is a type of neural network that is trained on a massive dataset of text and code
 ## PROJECT 
@@ -13,7 +13,12 @@ This project introduces an VoiceBot skill aimed at providing psychological advic
 ![Screenshot 2024-02-27 222458](https://github.com/SDineshKumar1304/AI/assets/125432987/7046c8fd-e644-4a54-9c4d-dfecfd6a8076)
 
 ## Proposed System:
-![image](https://github.com/SDineshKumar1304/AI/assets/125432987/95473424-dd2b-4b10-a592-d2eefc55d72a)
+
+![image](https://github.com/SDineshKumar1304/Emo_VoiceBot_LLM_BERT/assets/125432987/8b462d02-ffc4-4d89-a6b1-d60b7e33ad6b)
+
+# it Can Dictate Answers for the questions  
+
+![image](https://github.com/SDineshKumar1304/Emo_VoiceBot_LLM_BERT/assets/125432987/29a0337d-f915-4a08-82c5-feea496a7593)
 
 ## Model Architecture:
 ![image](https://github.com/SDineshKumar1304/Emo_VoiceBot_LLM_BERT/assets/125432987/03720518-12d7-4830-a615-74f3ccfea400)
