@@ -1,3 +1,6 @@
+# Voice Assistant Revolution app
+
+## Note : Under Copyright ©
 # Training Bert Model 
 # BERT Introduction:
 BERT, or Bidirectional Encoder Representations from Transformers, is a large language model (LLM) that was developed by Google AI. It is a type of neural network that is trained on a massive dataset of text and code
