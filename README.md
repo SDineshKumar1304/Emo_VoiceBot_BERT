@@ -1,6 +1,10 @@
-# Training Bert LLM from Transformers Library
-
+# Training Bert Model 
+# BERT Introduction:
+BERT, or Bidirectional Encoder Representations from Transformers, is a large language model (LLM) that was developed by Google AI. It is a type of neural network that is trained on a massive dataset of text and code
 ## PROJECT 
+
+Trained a Bert Sequence Classification Model for Emotion Classification. also developed a virtual assistant and solved a problem in the existing Virtual Assistsant
+ 
  ##  AI Multi-Modal Emotion Analysis VoiceBot for both Text and Audio Input for Personalized and Inclusive Conversations using BERT LLM model
 
 This project introduces an VoiceBot skill aimed at providing psychological advice. Explore how technology can contribute to mental well-being and consider contributing to make it even more impactful.
