@@ -14,7 +14,8 @@ This project introduces an VoiceBot skill aimed at providing psychological advic
 
 ## Proposed System:
 
-![Uploading image.png…]()
+![image](https://github.com/SDineshKumar1304/Emo_VoiceBot_LLM_BERT/assets/125432987/a0d1a3e9-3530-4d39-b4cb-2b0c60ed3352)
+
 
 # Updates
 # it Can Dictate Answers for the questions  
