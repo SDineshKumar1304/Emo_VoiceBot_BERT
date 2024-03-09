@@ -217,6 +217,6 @@ def plot_emotions():
     else:
         st.info("No emotions detected yet.")
         
-if __name__ == "_main_":
+if __name__ == "__main__":
     main()
     plot_emotions()
